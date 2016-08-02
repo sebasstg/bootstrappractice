@@ -145,8 +145,9 @@
                     <div class="form-group ">
 
                         <a id="reserveBtn" class="btn btn-warning btn-block"
-                           href="#reservationForm" data-toggle="tooltip"
-                           data-placement="bottom" title="Or Call us at +852 12345678">Reserve
+                           href="#reservationForm" data-toggle="modal"
+                           data-target="#myModal"
+                           data-placement="bottom" >Reserve
                             Table</a>
                     </div>
 
@@ -316,65 +317,7 @@
             <h3 align=center>Reserve a Table</h3>
         </div>
         <div class="col-xs-12 col-sm-9 ">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-xs-12 col-sm-2" style="text-align: right;">
-                        Number of Guests</label>
-                    <div class="col-xs-12 col-sm-10">
-                        <label class="checkbox-inline"> <input id="nguests1"
-                                                               type="radio">1
-                        </label> <label class="checkbox-inline"> <input id="nguests2"
-                                                                        type="radio">2
-                    </label> <label class="checkbox-inline"> <input id="nguests3"
-                                                                    type="radio">3
-                    </label> <label class="checkbox-inline"> <input id="nguests4"
-                                                                    type="radio">4
-                    </label> <label class="checkbox-inline"> <input id="nguests5"
-                                                                    type="radio">5
-                    </label> <label class="checkbox-inline"> <input id="nguests6"
-                                                                    type="radio">6
-                    </label>
-                    </div>
 
-                </div>
-                <div class="form-group">
-                    <label class="col-xs-12 col-sm-2" style="text-align: right;">
-                        Date and Time</label>
-                    <div class="col-xs-12 col-sm-4">
-
-                        <div class="input-group date" data-provide="datepicker">
-                            <input type="text" class="form-control" placeholder="Date">
-                            <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-th"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-
-                        <div class="input-group " data-provide="datepicker">
-                            <input type="text" class="form-control" placeholder="Time">
-                            <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-12 col-sm-4 col-sm-push-2">
-                        <button class="btn btn-primary">Reserve</button>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="alert alert-warning">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Warning!</strong> Please <a href="tel: +852 1234 5678"><strong>call</strong></a>
-                        us to reserve for more than 6 guests.
-                    </div>
-                </div>
-
-
-            </form>
         </div>
 
 
@@ -426,11 +369,117 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reserve Table</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-2" style="text-align: right;">
+                                Number of Guests</label>
+                            <div class="col-xs-12 col-sm-10">
+                                <label class="checkbox-inline"> <input id="nguests1"
+                                                                       type="radio">1
+                                </label> <label class="checkbox-inline"> <input id="nguests2"
+                                                                                type="radio">2
+                            </label> <label class="checkbox-inline"> <input id="nguests3"
+                                                                            type="radio">3
+                            </label> <label class="checkbox-inline"> <input id="nguests4"
+                                                                            type="radio">4
+                            </label> <label class="checkbox-inline"> <input id="nguests5"
+                                                                            type="radio">5
+                            </label> <label class="checkbox-inline"> <input id="nguests6"
+                                                                            type="radio">6
+                            </label>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-2" style="text-align: right;" for="sectionBtns">
+                                Section</label>
+                            <div id="sectionBtns" class="btn-group" data-toggle="buttons">
+                                <label id="btn1" class="btn btn-success active">
+                                    <input type="checkbox" autocomplete="off" checked>Non-Smoking
+                                </label>
+                                <label id="btn2" class="btn btn-danger">
+                                    <input type="checkbox" autocomplete="off"> Smoking
+                                </label>
+
+                            </div>
+
+                            </div>
+
+
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-2" style="text-align: right;">
+                                Date and Time</label>
+                            <div class="col-xs-12 col-sm-4">
+
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control" placeholder="Date">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+
+                                <div class="input-group " data-provide="datepicker">
+                                    <input type="text" class="form-control" placeholder="Time">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-sm-push-2">
+                                <button class="btn btn-primary">Reserve</button>
+                                <button class="btn btn-default "
+                                        data-dismiss="modal"
+                                >Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-warning">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Warning!</strong> Please <a href="tel: +852 1234 5678"><strong>call</strong></a>
+                                us to reserve for more than 6 guests.
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
 </footer>
 
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $('#btn1').on('click', function () {
+
+        //$('#btn1').button('toggle') // button text will be "finished!"
+        $('#btn2').button('toggle')
+    })
+
+    $('#btn2').on('click', function () {
+
+        $('#btn1').button('toggle') // button text will be "finished!"
+       // $('#btn2').button('toggle')
     })
 
 </script>
