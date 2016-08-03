@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/mystyles.css_old" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet">
     <script
@@ -147,7 +147,7 @@
                         <a id="reserveBtn" class="btn btn-warning btn-block"
                            href="#reservationForm" data-toggle="modal"
                            data-target="#myModal"
-                           data-placement="bottom" >Reserve
+                           data-placement="bottom">Reserve
                             Table</a>
                     </div>
 
@@ -221,6 +221,15 @@
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+
+                <div class="btn-group" id="carouselButtons">
+                    <button class="btn btn-danger btn-xs" id="carousel-pause">
+                        <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+                    </button>
+                    <button class="btn btn-danger btn-xs" id="carousel-play">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -413,7 +422,7 @@
 
                             </div>
 
-                            </div>
+                        </div>
 
 
                         <div class="form-group">
@@ -463,24 +472,35 @@
             </div>
 
         </div>
+    </div>
 </footer>
 
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
 
     $('#btn1').on('click', function () {
 
         //$('#btn1').button('toggle') // button text will be "finished!"
         $('#btn2').button('toggle')
-    })
+    });
 
     $('#btn2').on('click', function () {
 
         $('#btn1').button('toggle') // button text will be "finished!"
-       // $('#btn2').button('toggle')
-    })
+        // $('#btn2').button('toggle')
+    });
+
+    $(document).ready(function(){
+        $("#mycarousel").carousel( { interval: 2000 } );
+        $("#carousel-pause").click(function(){
+            $("#mycarousel").carousel('pause');
+        });
+        $("#carousel-play").click(function(){
+            $("#mycarousel").carousel('cycle');
+        });
+    });
 
 </script>
 </body>
